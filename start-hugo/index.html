@@ -144,6 +144,29 @@ cd sitename
 <pre><code class="language-code">hugo server --theme=hyde --buildDrafts --watch
 </code></pre>
 
+<h2 id="じゃあgithub-pagesに反映してみますか:6d6259305a09e77f43728b9ae1fdb84e">じゃあgithub pagesに反映してみますか</h2>
+
+<ul>
+<li>サブモジュールの作成</li>
+</ul>
+
+<pre><code class="language-code">rm -rf public
+git submodule add https://github.com/username/username.github.io.git public
+</code></pre>
+
+<ul>
+<li>アクセス!!
+<a href="http://username.github.io">http://username.github.io</a></li>
+</ul>
+
+<h2 id="今までの投稿ファイルもgithubにpush:6d6259305a09e77f43728b9ae1fdb84e">今までの投稿ファイルもgithubにpush</h2>
+
+<pre><code class="language-code">cd ../
+git add .
+git commit
+git push origin master
+</code></pre>
+
 	  </div>
 	</div>
   </div>

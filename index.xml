@@ -87,6 +87,29 @@ cd sitename
 
 &lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;hugo server --theme=hyde --buildDrafts --watch
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;じゃあgithub-pagesに反映してみますか:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;じゃあgithub pagesに反映してみますか&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;サブモジュールの作成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;rm -rf public
+git submodule add https://github.com/username/username.github.io.git public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アクセス!!
+&lt;a href=&#34;http://username.github.io&#34;&gt;http://username.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;今までの投稿ファイルもgithubにpush:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;今までの投稿ファイルもgithubにpush&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;cd ../
+git add .
+git commit
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
