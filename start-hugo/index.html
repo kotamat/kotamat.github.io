@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>start hugo</title>
+  <meta name="description" content="start hugo">
+  <meta name="author" content="">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="http://localhost:1313//css/fonts.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/normalize.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/skeleton.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/custom.css">
+
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313//highlight/styles/default.css">
+  
+  <script src="http://localhost:1313//highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+
+<header id="menu">
+  <div class="container">
+	<span class="logo">kotamat</span>
+	<a>&#9776;</a>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="container">
+	<div class="row">
+	  <div class="eight columns offset-by-two">
+		<ul class="">
+		  
+		  <li class="u-pull-left"> <a href="http://localhost:1313/" class="brand" style="font-weight:bold;font-size:normal"> kotamat </a></li>
+		  <li class="u-pull-right cate"> <a href="http://localhost:1313//about/" class=""> About </a></li>
+		  
+		</ul>
+	  </div>
+	</div>
+  </div>
+</nav>
+
+
+<div class="container post-wrapper">
+  <div class="row">
+	<div class="eight columns offset-by-two">
+	  <div id="post-title">
+		<p class="footnote">
+		  
+		  <time class="">2015-04-12</time>
+		  
+		  
+		  
+
+		  
+
+		  
+
+		</p>
+		<h5>start hugo</h5>
+	  </div>
+
+	  <div class="post">
+		
+
+<h1 id="hugoを使ってブログを作ってみた:6d6259305a09e77f43728b9ae1fdb84e">Hugoを使ってブログを作ってみた</h1>
+
+<h2 id="なんでhugo:6d6259305a09e77f43728b9ae1fdb84e">なんでHugo?</h2>
+
+<p>最近wordpressにてサイト作成してみているんですが、 ブログの情報ってDBに入っちゃいますよね。</p>
+
+<p>やっぱりブログとはいえステージング環境とかいれてテーマの修正とかしたいことあるんですけど、 まぁマイグレーションがめんどくさい！</p>
+
+<p>しかもwordpressだとサイトのドメインとかステージング向きじゃない奴とかあると、DB変更しなきゃいけなかったり…</p>
+
+<p>ってことでマイグレーションできる静的なブログツールを探してました。</p>
+
+<h2 id="じゃあjekyllでいいよね:6d6259305a09e77f43728b9ae1fdb84e">じゃあJekyllでいいよね？</h2>
+
+<p>Goしたかったんです。GoGo!</p>
+
+<h2 id="インストール手順:6d6259305a09e77f43728b9ae1fdb84e">インストール手順</h2>
+
+<p>だいたいreadmeみれば書いてありますが。。 <a href="https://github.com/spf13/hugo">https://github.com/spf13/hugo</a>
+コントリビュートしないのであればbrewに乗っかっているので、 brewからインストールしてみます。</p>
+
+<ul>
+<li>brewでインストール</li>
+</ul>
+
+<pre><code class="language-code">brew install hugo
+</code></pre>
+
+<ul>
+<li>新規サイト作成</li>
+</ul>
+
+<pre><code class="language-code">hugo new sitename
+cd sitename
+</code></pre>
+
+<ul>
+<li>ファイルを作成( XXX.mdを作成すると、/XXX.htmlにサイトが作成されるイメージ)</li>
+</ul>
+
+<pre><code class="language-code">hugo new about.md
+</code></pre>
+
+<ul>
+<li>about.mdを編集</li>
+<li>テーマのインストール</li>
+</ul>
+
+<pre><code class="language-code">git clone --recursive https://github.com/spf13/hugoThemes themes
+</code></pre>
+
+<ul>
+<li>public/XXX.htmlが作成される</li>
+</ul>
+
+<pre><code class="language-code">hugo
+</code></pre>
+
+<ul>
+<li>一旦サイトに公開
+
+<ul>
+<li><code>--theme</code> インストールしたテーマを選んで</li>
+<li><code>--buildDrafts</code> 表示させる</li>
+<li><code>--watch</code> mdファイルが変更されたら即時反映</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-code">hugo server --theme=hyde --buildDrafts --watch
+</code></pre>
+
+	  </div>
+	</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+	<div class="row">
+	  <div class="ten columns offset-by-two">
+		<p class="footnote">
+		  
+		  Copyright: All rights reserved by <a href="mailto:">@</a>.
+		  
+		  
+		</p>
+	  </div>
+	</div>
+  </div>
+</div>
+
+
+<script src="http://localhost:1313//js/jquery.min.js" type="text/javascript"></script>
+<script src="http://localhost:1313//js/jquery.timeago.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $("time.timeago").timeago();
+  })
+  $("#menu").click(function(){
+    $(".brand").text("HOME");
+    $(".navbar ul li").removeClass("cate");
+    $(".navbar").toggle();
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $(".navbar").removeAttr("style");
+    }
+  });
+</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
+
