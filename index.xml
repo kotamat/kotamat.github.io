@@ -2,11 +2,212 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kotamat</title>
-    <link>http://kotamat.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on kotamat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <atom:link href="http://kotamat.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2015 16:55:40 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>start jaws</title>
+      <link>http://localhost:1313/start-jaws/</link>
+      <pubDate>Sat, 24 Oct 2015 16:55:40 +0900</pubDate>
+      
+      <guid>http://localhost:1313/start-jaws/</guid>
+      <description>
+
+&lt;h1 id=&#34;サーバレスフレームワーク-jaws-の導入:76eeb6001a2cfb031607964010a7543f&#34;&gt;&amp;ldquo;サーバレスフレームワーク jaws の導入&amp;rdquo;&lt;/h1&gt;
+
+&lt;h2 id=&#34;jawsって何:76eeb6001a2cfb031607964010a7543f&#34;&gt;JAWSって何？&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AWSのサーバレス機能 Lambda, API Gateway, S3等に対応したフレームワーク&lt;/li&gt;
+&lt;li&gt;プロジェクト化することによって各Lambda functionを一つのプロジェクトで管理できる&lt;/li&gt;
+&lt;li&gt;デプロイもできちゃう&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;どうやってインストールするの:76eeb6001a2cfb031607964010a7543f&#34;&gt;どうやってインストールするの？&lt;/h2&gt;
+
+&lt;h3 id=&#34;iamでadminユーザを作成:76eeb6001a2cfb031607964010a7543f&#34;&gt;IAMでAdminユーザを作成&lt;/h3&gt;
+
+&lt;h3 id=&#34;プロジェクトの作成:76eeb6001a2cfb031607964010a7543f&#34;&gt;プロジェクトの作成&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ jaws project create&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;       ____   _____  __      __  _________
+      |    | /  _  \/  \    /  \/   _____/
+      |    |/  /_\  \   \/\/   /\_____  \
+  /\__|    /    |    \        / /        \
+  \________\____|__  /\__/\__/ /_________/ v1 (BETA)
+
+       *** The Server-Less Framework ***
+
+JAWS: Enter a project name:  (jaws-4kPO5mNbg)
+JAWS: Enter a project domain (You can change this at any time:   (myapp.com)
+JAWS: Enter an email to use for AWS alarms:  (you@yourapp.com)
+JAWS: Enter a stage for this project:  (dev)
+JAWS: Enter the ACCESS KEY ID for your Admin AWS IAM User:  
+JAWS: Enter the SECRET ACCESS KEY for your Admin AWS IAM User:  
+JAWS: Select a region for your project:
+    us-east-1
+    us-west-2
+    eu-west-1
+  &amp;gt; ap-northeast-1
+JAWS: Select an AWS profile for your project:
+  &amp;gt; default
+JAWS: Creating CloudFormation Stack for your new project (~5 mins)...
+JAWS: Preparing your runtime and installing jaws-core module...
+
+
+npm WARN EPACKAGEJSON projectname No license field.
+JAWS: Your project projectname has been successfully created in the current directory.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;テストモジュールをインストール:76eeb6001a2cfb031607964010a7543f&#34;&gt;テストモジュールをインストール&lt;/h3&gt;
+
+&lt;p&gt;AWSM と呼ばれるモジュールをJAWSでは使っているようです。
+今回は、テスト用に用意された*greeeting-hello*をつかってみます
+&lt;code&gt;$ jaws module create greetings hello&lt;/code&gt;
+するとaws_modulesにファイルが追加される
+```sh $aws_modules/
+└── greetings
+    ├── awsm.json
+    └── hello
+        ├── awsm.json
+        ├── event.json
+        ├── handler.js
+        └── index.js&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+### アクセスしてみる！
+
+```sh
+curl -s https://txw4w48c82.execute-api.ap-northeast-1.amazonaws.com/dev/gr
+eetings/hello
+{&amp;quot;message&amp;quot;:&amp;quot;Your JAWS lambda executed successfully!&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;AWS 側にも各種設定が入っているようです。
+&lt;img src=&#34;http://localhost:1313/images/AWS Lambda.png&#34; alt=&#34;&#34; /&gt;
+
+&lt;img src=&#34;http://localhost:1313/images/API Gateway.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>start hugo</title>
+      <link>http://localhost:1313/start-hugo/</link>
+      <pubDate>Sun, 12 Apr 2015 22:05:13 +0900</pubDate>
+      
+      <guid>http://localhost:1313/start-hugo/</guid>
+      <description>
+
+&lt;h1 id=&#34;hugoを使ってブログを作ってみた:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;Hugoを使ってブログを作ってみた&lt;/h1&gt;
+
+&lt;h2 id=&#34;なんでhugo:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;なんでHugo?&lt;/h2&gt;
+
+&lt;p&gt;最近wordpressにてサイト作成してみているんですが、 ブログの情報ってDBに入っちゃいますよね。&lt;/p&gt;
+
+&lt;p&gt;やっぱりブログとはいえステージング環境とかいれてテーマの修正とかしたいことあるんですけど、 まぁマイグレーションがめんどくさい！&lt;/p&gt;
+
+&lt;p&gt;しかもwordpressだとサイトのドメインとかステージング向きじゃない奴とかあると、DB変更しなきゃいけなかったり…&lt;/p&gt;
+
+&lt;p&gt;ってことでマイグレーションできる静的なブログツールを探してました。&lt;/p&gt;
+
+&lt;h2 id=&#34;じゃあjekyllでいいよね:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;じゃあJekyllでいいよね？&lt;/h2&gt;
+
+&lt;p&gt;Goしたかったんです。GoGo!&lt;/p&gt;
+
+&lt;h2 id=&#34;インストール手順:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;インストール手順&lt;/h2&gt;
+
+&lt;p&gt;だいたいreadmeみれば書いてありますが。。 &lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;https://github.com/spf13/hugo&lt;/a&gt;
+コントリビュートしないのであればbrewに乗っかっているので、 brewからインストールしてみます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;brewでインストール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;新規サイト作成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;hugo new sitename
+cd sitename
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ファイルを作成( XXX.mdを作成すると、/XXX.htmlにサイトが作成されるイメージ)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;hugo new about.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;about.mdを編集&lt;/li&gt;
+&lt;li&gt;テーマのインストール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;git clone --recursive https://github.com/spf13/hugoThemes themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;public/XXX.htmlが作成される&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一旦サイトに公開
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--theme&lt;/code&gt; インストールしたテーマを選んで&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--buildDrafts&lt;/code&gt; 表示させる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--watch&lt;/code&gt; mdファイルが変更されたら即時反映&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;hugo server --theme=hyde --buildDrafts --watch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;じゃあgithub-pagesに反映してみますか:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;じゃあgithub pagesに反映してみますか&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;サブモジュールの作成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;rm -rf public
+git submodule add https://github.com/username/username.github.io.git public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アクセス!!
+&lt;a href=&#34;http://username.github.io&#34;&gt;http://username.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;今までの投稿ファイルもgithubにpush:6d6259305a09e77f43728b9ae1fdb84e&#34;&gt;今までの投稿ファイルもgithubにpush&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-code&#34;&gt;cd ../
+git add .
+git commit
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 12 Apr 2015 22:01:08 +0900</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> kotamat &middot; kotamat </title>
+  <title> start jaws &middot; kotamat </title>
 
   
   <link rel="stylesheet" href="http://localhost:1313//css/poole.css">
@@ -20,7 +20,7 @@
   <link rel="shortcut icon" href="/favicon.ico">
 
   
-  <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="kotamat" />
+  <link href="" rel="alternate" type="application/rss+xml" title="kotamat" />
 </head>
 
 <body>
@@ -45,19 +45,10 @@
 
 
     <div class="content container">
-<div class="posts">
-
+<div class="post">
+  <h1>start jaws</h1>
+  <span class="post-date">Sat, Oct 24, 2015</span>
       
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:1313/start-jaws/">
-        start jaws
-      </a>
-    </h1>
-
-    <span class="post-date">Sat, Oct 24, 2015</span>
-
-    
 
 <h1 id="サーバレスフレームワーク-jaws-の導入:76eeb6001a2cfb031607964010a7543f">&ldquo;サーバレスフレームワーク jaws の導入&rdquo;</h1>
 
@@ -136,127 +127,6 @@ eetings/hello
 <img src="/images/API Gateway.png" alt="" />
 </p>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:1313/start-hugo/">
-        start hugo
-      </a>
-    </h1>
-
-    <span class="post-date">Sun, Apr 12, 2015</span>
-
-    
-
-<h1 id="hugoを使ってブログを作ってみた:6d6259305a09e77f43728b9ae1fdb84e">Hugoを使ってブログを作ってみた</h1>
-
-<h2 id="なんでhugo:6d6259305a09e77f43728b9ae1fdb84e">なんでHugo?</h2>
-
-<p>最近wordpressにてサイト作成してみているんですが、 ブログの情報ってDBに入っちゃいますよね。</p>
-
-<p>やっぱりブログとはいえステージング環境とかいれてテーマの修正とかしたいことあるんですけど、 まぁマイグレーションがめんどくさい！</p>
-
-<p>しかもwordpressだとサイトのドメインとかステージング向きじゃない奴とかあると、DB変更しなきゃいけなかったり…</p>
-
-<p>ってことでマイグレーションできる静的なブログツールを探してました。</p>
-
-<h2 id="じゃあjekyllでいいよね:6d6259305a09e77f43728b9ae1fdb84e">じゃあJekyllでいいよね？</h2>
-
-<p>Goしたかったんです。GoGo!</p>
-
-<h2 id="インストール手順:6d6259305a09e77f43728b9ae1fdb84e">インストール手順</h2>
-
-<p>だいたいreadmeみれば書いてありますが。。 <a href="https://github.com/spf13/hugo">https://github.com/spf13/hugo</a>
-コントリビュートしないのであればbrewに乗っかっているので、 brewからインストールしてみます。</p>
-
-<ul>
-<li>brewでインストール</li>
-</ul>
-
-<pre><code class="language-code">brew install hugo
-</code></pre>
-
-<ul>
-<li>新規サイト作成</li>
-</ul>
-
-<pre><code class="language-code">hugo new sitename
-cd sitename
-</code></pre>
-
-<ul>
-<li>ファイルを作成( XXX.mdを作成すると、/XXX.htmlにサイトが作成されるイメージ)</li>
-</ul>
-
-<pre><code class="language-code">hugo new about.md
-</code></pre>
-
-<ul>
-<li>about.mdを編集</li>
-<li>テーマのインストール</li>
-</ul>
-
-<pre><code class="language-code">git clone --recursive https://github.com/spf13/hugoThemes themes
-</code></pre>
-
-<ul>
-<li>public/XXX.htmlが作成される</li>
-</ul>
-
-<pre><code class="language-code">hugo
-</code></pre>
-
-<ul>
-<li>一旦サイトに公開
-
-<ul>
-<li><code>--theme</code> インストールしたテーマを選んで</li>
-<li><code>--buildDrafts</code> 表示させる</li>
-<li><code>--watch</code> mdファイルが変更されたら即時反映</li>
-</ul></li>
-</ul>
-
-<pre><code class="language-code">hugo server --theme=hyde --buildDrafts --watch
-</code></pre>
-
-<h2 id="じゃあgithub-pagesに反映してみますか:6d6259305a09e77f43728b9ae1fdb84e">じゃあgithub pagesに反映してみますか</h2>
-
-<ul>
-<li>サブモジュールの作成</li>
-</ul>
-
-<pre><code class="language-code">rm -rf public
-git submodule add https://github.com/username/username.github.io.git public
-</code></pre>
-
-<ul>
-<li>アクセス!!
-<a href="http://username.github.io">http://username.github.io</a></li>
-</ul>
-
-<h2 id="今までの投稿ファイルもgithubにpush:6d6259305a09e77f43728b9ae1fdb84e">今までの投稿ファイルもgithubにpush</h2>
-
-<pre><code class="language-code">cd ../
-git add .
-git commit
-git push origin master
-</code></pre>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:1313/about/">
-        about
-      </a>
-    </h1>
-
-    <span class="post-date">Sun, Apr 12, 2015</span>
-
-    
-  </div>
-  
 </div>
 </div>
 
